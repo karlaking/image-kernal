@@ -1,0 +1,22 @@
+{
+  "name": "image-kernal",
+  "version": "1.0.0",
+  "description": "Program that takes a nested array and returns values in place that are the average of its neighbors. ",
+  "main": "convolution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlaking/image-kernal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karlaking/image-kernal/issues"
+  },
+  "homepage": "https://github.com/karlaking/image-kernal#readme",
+  "dependencies": {
+    "yargs": "^8.0.2"
+  }
+}

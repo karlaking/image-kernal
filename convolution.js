@@ -1,8 +1,20 @@
 
-
-// Program that takes an 3x3 array and returns a 3x3 array where each value
+// Program that takes a nested array and returns an array of the same dimensions where each value
 // is an avaerage of its north,south,east,west values, and itself. 
 
+  // TODO make commandline utility that reads in adjacent file & writes to a new file
+  // Make prototype & hide private methods 
+  // Configure to take kernal size and extend neighbor search 
+  // Refactor
+
+const fs = require('fs');
+const yargs = require('yargs');
+
+const options = yargs.argv;
+const kernalSize = options.size
+
+var imageFile = fs.readFileSync(options.i);
+var image = JSON.parse(imageFile);
 
 
 var traverseArrays = function (nestedArray) {
@@ -68,11 +80,5 @@ var averageValues = function(valueArray) {
 
 };
 
-
-var image = [
-[0,2,5],
-[5,3,1],
-[4,5,2]];
-
-  
 console.log(traverseArrays(image));
+

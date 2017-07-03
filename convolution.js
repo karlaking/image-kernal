@@ -1,22 +1,25 @@
 
 
-// Write a program that takes an 3x3 array and returns a 3x3 array where each value
+// Program that takes an 3x3 array and returns a 3x3 array where each value
 // is an avaerage of its north,south,east,west values, and itself. 
 
 
-// Pseudo code
-// Define function for the convolution
-  // define variable to store temp values
-    // push current pixels value into the temp array 
-  // write logic expressions for grabbing neighbor values and push them into temp array
-  // find average of all values in temp array
 
-// Define function that traverses the arrays, and runs the convoultoin 
-  // The input will be its location like '0,0' 
-  // continuing moving until you get 'undefined'
+var traverseArrays = function (nestedArray) {
+  var kernalArrays = [];
+  for (var i=0; i < nestedArray.length; i++) {
+    var kernalArray = [];
+    for (var j=0; j< nestedArray[i].length; j++){
+      kernalArray.push(findNeighbors(i, j, nestedArray));
+    }
+    kernalArrays.push(kernalArray);
+  }
+  return kernalArrays
+};
 
 
-var convolution = function(currentRow, currentCol, nestedArray) {
+
+var findNeighbors = function(currentRow, currentCol, nestedArray) {
   var tempArray = [nestedArray[currentRow][currentCol]] ; 
 
   var neighborMap = {
@@ -49,9 +52,21 @@ var convolution = function(currentRow, currentCol, nestedArray) {
 
   };
 
-  console.log(tempArray);
+  return averageValues(tempArray);
   
 }; 
+
+var averageValues = function(valueArray) {
+  var valueCount = valueArray.length;
+  var valueSum = 0;
+  
+  for (var i=0; i < valueCount; i++ ){
+    valueSum += valueArray[i];  
+  }; 
+
+  return valueSum/valueCount
+
+};
 
 
 var image = [
@@ -59,5 +74,5 @@ var image = [
 [5,3,1],
 [4,5,2]];
 
-convolution(1,1,image);
-
+  
+console.log(traverseArrays(image));

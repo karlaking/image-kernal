@@ -2,9 +2,11 @@
 // Program that takes a nested array and returns an array of the same dimensions where each value
 // is an avaerage of its north,south,east,west values, and itself. 
 
-  // TODO make commandline utility that reads in adjacent file & writes to a new file
+  // TODO make commandline utility that reads in adjacent file & 
+  // Writes to a new file with size of kernal
   // Make prototype & hide private methods 
-  // Configure to take kernal size and extend neighbor search 
+  // Configure to take kernal size and extend neighbor search
+  // Write tests 
   // Refactor
 
 const fs = require('fs');
